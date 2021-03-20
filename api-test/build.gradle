@@ -17,7 +17,9 @@ ext {
 
 dependencies {
     compile "io.rest-assured:rest-assured:$restAssuredVersion"
-    implementation group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.9.8'
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.9.8'
+    compile group: 'com.github.javafaker', name: 'javafaker', version: '1.0.2'
+
     testCompile "org.testng:testng:$testNgVersion"
 
 }
