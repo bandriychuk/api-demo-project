@@ -1,0 +1,27 @@
+plugins {
+    id 'java'
+}
+
+group 'api-test'
+version '1.0-SNAPSHOT'
+
+
+repositories {
+    mavenCentral()
+}
+
+ext {
+    restAssuredVersion = '4.3.3'
+    testNgVersion = '7.3.0'
+}
+
+dependencies {
+    compile "io.rest-assured:rest-assured:$restAssuredVersion"
+    implementation group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.9.8'
+    testCompile "org.testng:testng:$testNgVersion"
+
+}
+
+test {
+    useTestNG()
+}
