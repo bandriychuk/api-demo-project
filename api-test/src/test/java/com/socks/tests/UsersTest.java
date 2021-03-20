@@ -2,7 +2,6 @@ package com.socks.tests;
 
 import com.github.javafaker.Faker;
 import com.socks.api.payloads.UserPayload;
-import com.socks.api.responses.UserRegistrationResponse;
 import com.socks.api.services.UserApiService;
 import io.restassured.RestAssured;
 import org.testng.annotations.BeforeClass;
