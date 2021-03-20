@@ -13,8 +13,23 @@ import javax.annotation.Generated;
 @Generated("com.robohorse.robopojogenerator")
 public class UserPayload{
 
+	@JsonProperty("firstName")
+	private String firstName;
+
+	@JsonProperty("lastName")
+	private String lastName;
+
 	@JsonProperty("password")
 	private String password;
+
+	@JsonProperty("userStatus")
+	private int userStatus;
+
+	@JsonProperty("phone")
+	private String phone;
+
+	@JsonProperty("id")
+	private String id;
 
 	@JsonProperty("email")
 	private String email;
