@@ -1,9 +1,11 @@
 package com.socks.tests;
 
 import com.github.javafaker.Faker;
+import com.socks.api.ProjectConfig;
 import com.socks.api.payloads.UserPayload;
 import com.socks.api.services.UserApiService;
 import io.restassured.RestAssured;
+import org.aeonbits.owner.ConfigFactory;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
@@ -17,11 +19,14 @@ import static org.hamcrest.Matchers.not;
 public class UsersTest {
 
 	private final UserApiService userApiService = new UserApiService();
-	private final Faker faker = new Faker(new Locale("uk"));
+	private Faker faker;
 
 	@BeforeClass
 	public void setUp(){
-		RestAssured.baseURI = "https://petstore.swagger.io/v2/";
+		ProjectConfig config = ConfigFactory.create(ProjectConfig.class);
+		faker = new Faker(new Locale("de"));
+		RestAssured.baseURI = config.baseUrl();
+
 	}
 
 	@Test
